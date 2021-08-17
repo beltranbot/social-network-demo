@@ -10,14 +10,14 @@
             </h1>
 
             <div v-if="canLogin" class="flex justify-center space-x-6 mt-5">
-                <inertia-link href="#" v-if="$page.props.user" class="text-lg text-gray-700 underline">
+                <Link href="#" v-if="$page.props.user" class="text-lg text-gray-700 underline">
                     Dashboard
-                </inertia-link>
+                </Link>
                 <template v-else>
-                    <inertia-link :href="route('login')" class="text-white bg-gray-800 rounded px-3 py-1 hover:bg-gray-500">Login</inertia-link>
-                    <inertia-link :href="route('register')" v-if="canRegister" class="text-white bg-gray-800 rounded px-3 py-1 hover:bg-gray-500">
+                    <Link :href="route('login')" class="text-white bg-gray-800 rounded px-3 py-1 hover:bg-gray-500">Login</Link>
+                    <Link :href="route('register')" v-if="canRegister" class="text-white bg-gray-800 rounded px-3 py-1 hover:bg-gray-500">
                         Register
-                    </inertia-link>
+                    </Link>
                 </template>
             </div>
             <p class="mt-10">{{ users }} active members</p>

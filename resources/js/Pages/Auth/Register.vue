@@ -3,7 +3,9 @@
 
     <jet-authentication-card>
         <template #logo>
-            <jet-authentication-card-logo />
+            <inertia-link :href="route('welcome')">
+                <img :src="'storage/images/logo.png'" alt="Logo" class="w-64">
+            </inertia-link>
         </template>
 
         <jet-validation-errors class="mb-4" />
@@ -15,8 +17,22 @@
             </div>
 
             <div class="mt-4">
+                <jet-label for="username" value="Username" />
+                <jet-input id="username" type="text" class="mt-1 block w-full" v-model="form.username" required autofocus autocomplete="username" />
+            </div>
+
+            <div class="mt-4">
                 <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
+            </div>
+
+            <div class="mt-4">
+                <jet-label for="gender" value="Gender" />
+                <select v-model="form.gender" name="gender" id="gender" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option disabled value="">Please select one</option>
+                    <option :value="'Female'">Female</option>
+                    <option :value="'Male'">Male</option>
+                </select>
             </div>
 
             <div class="mt-4">
@@ -81,7 +97,9 @@
             return {
                 form: this.$inertia.form({
                     name: '',
+                    username: '',
                     email: '',
+                    gender: '',
                     password: '',
                     password_confirmation: '',
                     terms: false,

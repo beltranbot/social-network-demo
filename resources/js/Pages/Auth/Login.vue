@@ -2,9 +2,9 @@
     <Head title="Log in" />
 
     <jet-authentication-card>
-        <template #logo>
-            <jet-authentication-card-logo />
-        </template>
+        <inertia-link :href="route('welcome')">
+            <img :src="'storage/images/logo.png'" alt="Logo" class="w-64">
+        </inertia-link>
 
         <jet-validation-errors class="mb-4" />
 
