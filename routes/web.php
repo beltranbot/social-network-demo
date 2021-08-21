@@ -15,7 +15,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/", [WelcomeController::class, "index"])->name("welcome");
+Route::middleware(["guest"])->get("/", [WelcomeController::class, "index"])->name("welcome");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');

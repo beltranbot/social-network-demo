@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+
+    protected function defaultProfilePhotoUrl()
+    {
+        return asset("/storage/images/default.jpg");
+    }
 }
