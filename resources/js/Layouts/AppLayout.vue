@@ -129,8 +129,9 @@
                 </div>
             </header>
 
+            <!-- Page sidebar -->
             <div class="flex flex-wrap pt-16 sm:flex-nowrap">
-                <!-- Page sidebar -->
+                <side-bar></side-bar>
             </div>
 
             <!-- Page Content -->
@@ -147,6 +148,7 @@
     import JetNavLink from '@/Jetstream/NavLink.vue'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
     import { Head, Link } from '@inertiajs/inertia-vue3';
+    import SideBar from "@/Components/SideBar";
 
     export default {
         props: {
@@ -160,6 +162,7 @@
             JetNavLink,
             JetResponsiveNavLink,
             Link,
+            SideBar
         },
 
         data() {
