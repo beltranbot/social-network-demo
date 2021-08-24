@@ -129,15 +129,14 @@
                 </div>
             </header>
 
-            <!-- Page sidebar -->
             <div class="flex flex-wrap pt-16 sm:flex-nowrap">
+            <!-- Page sidebar -->
                 <side-bar></side-bar>
+                <!-- Page Content -->
+                <main>
+                    <slot></slot>
+                </main>
             </div>
-
-            <!-- Page Content -->
-            <main>
-                <slot></slot>
-            </main>
         </div>
     </div>
 </template>
