@@ -10,14 +10,14 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <Link :href="route('dashboard')" class="h-3/4 w-16">
+                                <Link :href="route('dashboard.index')" class="h-3/4 w-16">
                                     <img :src="'/storage/images/logo.png'" alt="logo">
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                                <jet-nav-link :href="route('dashboard.index')" :active="route().current('dashboard.index')">
                                     Dashboard
                                 </jet-nav-link>
                             </div>
@@ -87,7 +87,7 @@
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                        <jet-responsive-nav-link :href="route('dashboard.index')" :active="route().current('dashboard.index')">
                             Dashboard
                         </jet-responsive-nav-link>
                     </div>
@@ -133,7 +133,7 @@
             <!-- Page sidebar -->
                 <side-bar></side-bar>
                 <!-- Page Content -->
-                <main>
+                <main class="bg-gray-200 shadow rounded my-5 py-6 px-4 w-full sm:w-2/3 sm:sm-2 sm:my-3 md:mx-4 md:px-10 lg:mx-auto">
                     <slot></slot>
                 </main>
             </div>
